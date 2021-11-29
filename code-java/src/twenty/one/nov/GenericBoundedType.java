@@ -1,26 +1,26 @@
 package twenty.one.nov;
 
-class Stats<T> {
+class Stat<T extends Number> {
     T[] nums;
-    public Stats(T[] nums) {
+    public Stat(T[] nums) {
         this.nums = nums;
     }
     // Return type double in all cases.
     double average() {
         double sum = 0.0;
         for (T num : nums) {
-            sum += (int) num;
+            sum += num.doubleValue(); // Error!!!
         }
         return sum / nums.length;
     }
 }
 
-public class Generic_bounded_types {
-
+public class GenericBoundedType {
     public static void main(String[] args)
     {
         Integer[] a = {1,2,3,89};
-        Stats<Integer> inn = new Stats<Integer>(a);
+        Stat<Integer> inn = new Stat<Integer>(a);
         System.out.println(inn.average());
     }
 }
+
