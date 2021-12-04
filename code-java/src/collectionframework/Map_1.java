@@ -1,4 +1,4 @@
-package twenty.one.dec;
+package collectionframework;
 
 import java.util.Comparator;
 import java.util.HashMap;

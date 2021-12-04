@@ -1,4 +1,4 @@
-package twenty.one.nov;
+package generic;
 
 import java.util.HashMap;
 import java.util.Map;

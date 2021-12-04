@@ -1,4 +1,4 @@
-package twenty.one.dec;
+package collectionframework;
 
 import java.util.ArrayList;
 import java.util.Collections;

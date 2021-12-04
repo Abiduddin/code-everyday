@@ -1,4 +1,4 @@
-package twenty.one.nov;
+package exception;
 
 public class Exception_array_loop {
     public static void main(String[] args) {
