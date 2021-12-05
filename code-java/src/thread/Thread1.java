@@ -7,8 +7,12 @@ class RunnableImpl implements Runnable {
 
         int a = 50;
 
-        while (a-- > 0)
-            System.out.println("run - " + Thread.currentThread().getName());
+        Thread.currentThread().setPriority(1);
+
+        while (a-- > 0) {
+            System.out.println("run - " + Thread.currentThread().getName() + " " +
+                    "priority - " + Thread.currentThread().getPriority());
+        }
 
         try {
             Thread.sleep(100);
@@ -25,8 +29,12 @@ class ThreadImpl extends Thread {
 
         int a = 50;
 
-        while (a-- > 0)
-            System.out.println("run - " + Thread.currentThread().getName());
+        Thread.currentThread().setPriority(10);
+
+        while (a-- > 0) {
+            System.out.println("run - " + Thread.currentThread().getName() + " " +
+                    "priority - " + Thread.currentThread().getPriority());
+        }
 
         try {
             Thread.sleep(100);
