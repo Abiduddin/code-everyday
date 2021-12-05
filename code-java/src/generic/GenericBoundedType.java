@@ -5,11 +5,11 @@ class Stat<T extends Number> {
     public Stat(T[] nums) {
         this.nums = nums;
     }
-    // Return type double in all cases.
+
     double average() {
         double sum = 0.0;
         for (T num : nums) {
-            sum += num.doubleValue(); // Error!!!
+            sum += num.doubleValue();
         }
         return sum / nums.length;
     }

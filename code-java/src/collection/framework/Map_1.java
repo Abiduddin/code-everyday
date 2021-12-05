@@ -1,4 +1,4 @@
-package collectionframework;
+package collection.framework;
 
 import java.util.Comparator;
 import java.util.HashMap;

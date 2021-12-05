@@ -44,5 +44,13 @@ public class Thread1 {
 
         ThreadImpl thread1 = new ThreadImpl();
         thread1.start();
+
+        //getName
+        //getPriority
+        //isAlive
+        //join
+        //run
+        //sleep
+        //start
     }
 }
