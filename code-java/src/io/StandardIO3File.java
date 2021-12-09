@@ -15,11 +15,16 @@ public class StandardIO3File {
         System.out.println("Directory Path: " + dirPath);
 
         // lets create a new file
-        String fileName = "hello.txt";
+        String fileName = "hello1.txt";
         File file = new File(dirPath + File.separator + fileName);
         file.createNewFile();
 
         String filePath = file.getPath();
         System.out.println("File Path: "+ filePath);
+
+        File[] listRoots = dir.listFiles();
+        for (File file1 : listRoots) {
+            System.out.println(file1.getPath());
+        }
     }
 }
