@@ -8,11 +8,11 @@ public class StandardIO4InputStream {
     public static void main(String[] args) {
         FileInputStream in = null;
         try {
-            in = new FileInputStream("hello.txt");
+            in = new FileInputStream("/home/abid/workspace/personal/code-everyday/code-java/src/io/hello.txt");
             int c;
 
             while ((c = in.read()) != -1) {
-                System.out.print(c + ",");
+                System.out.print((char) c + ",");
             }
         } catch (IOException e) {
             System.err.println("Could not read file");
