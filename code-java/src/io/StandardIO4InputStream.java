@@ -8,7 +8,7 @@ public class StandardIO4InputStream {
     public static void main(String[] args) {
         FileInputStream in = null;
         try {
-            in = new FileInputStream("/home/abid/workspace/personal/code-everyday/code-java/src/io/hello.txt");
+            in = new FileInputStream("hello.txt");
             int c;
 
             while ((c = in.read()) != -1) {
