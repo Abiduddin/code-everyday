@@ -42,10 +42,8 @@ public class List_1 {
         });
         printList();
 
-        Collections.sort(list, (Integer t1, Integer t2) -> t1- t2);
+        Collections.sort(list, (Integer t1, Integer t2) -> t1 - t2);
         printList();
-
-
 
     }
 
