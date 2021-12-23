@@ -10,6 +10,7 @@ public class Map_1 {
         map.put(100,"kaka");
         map.put(101,"papa");
         map.put(102,"tata");
+        map.put(103,"tata");
 
         System.out.println(map.get(101));
         System.out.println(map.entrySet());

@@ -18,6 +18,16 @@ class Employee {
         this.age = age;
         this.salary = salary;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
+    }
 }
 public class ListSortObjects {
 
@@ -32,14 +42,14 @@ public class ListSortObjects {
         Collections.sort(list, new Comparator<Employee>(){
             @Override
             public int compare(Employee t, Employee t1) {
-                return t.age - t1.age;
+                return t.salary - t1.salary;
             }
         });
 
 //        Collections.sort(list);
 
         list.forEach((x) -> {
-            System.out.println(x.name);
+            System.out.println(x);
         });
     }
 }

@@ -26,11 +26,11 @@ public class List_1 {
         list.remove(2);
         printList();
 
-        list.remove(new Integer(13));
+        list.remove(Integer.valueOf(13));
         printList();
 
         list.add(3);
-        list.remove(new Integer(3));
+        list.remove(Integer.valueOf(3));
         printList();
 
         // sort
@@ -45,8 +45,16 @@ public class List_1 {
         });
         printList();
 
-        Collections.sort(list, (Integer t1, Integer t2) -> t1 - t2);
+        Collections.sort(list, (t1, t2) -> t1 - t2);
         printList();
+
+        List aa = new ArrayList();
+        aa.add(1);
+        aa.add("dfdfdf");
+        aa.add(1.33);
+
+        for (var a:aa)
+            System.out.println(a);
 
     }
 

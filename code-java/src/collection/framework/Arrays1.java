@@ -1,6 +1,7 @@
 package collection.framework;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Arrays1 {
     public static void main(String[] args) {
@@ -20,6 +21,10 @@ public class Arrays1 {
         display(array);
 
         System.out.println("location of -4: " + Arrays.binarySearch(array, -4));
+
+        List<Integer> ls = Arrays.asList(1,3,4,5,56);
+
+        ls.forEach(System.out::println);
 
     }
 

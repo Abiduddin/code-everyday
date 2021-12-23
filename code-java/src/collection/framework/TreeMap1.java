@@ -27,5 +27,6 @@ public class TreeMap1 {
         // update value
         treeMap.put("aav", treeMap.get("aav")+1000);
         System.out.println("updated aav : " + treeMap.get("aav"));
+
     }
 }

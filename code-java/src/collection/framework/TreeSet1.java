@@ -8,12 +8,14 @@ public class TreeSet1 {
 
         ts.add("C");
         ts.add("A");
+        ts.add("F");
         ts.add("D");
         ts.add("C");
         ts.add("E");
-        ts.add("F");
+
 
         System.out.println(ts);
-        System.out.println(ts.subSet("D", "F"));
+        System.out.println(ts.subSet("A",true,"E",false));
+        System.out.println(ts.subSet("A","E"));
     }
 }
