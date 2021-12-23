@@ -11,6 +11,10 @@ public class Map_1 {
         map.put(101,"papa");
         map.put(102,"tata");
 
+        System.out.println(map.get(101));
+        System.out.println(map.entrySet());
+        System.out.println(map.containsKey(1000));
+
         map.entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
