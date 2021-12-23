@@ -17,7 +17,7 @@ public class Vector1 {
         System.out.println("capacity: "+ vector.capacity());
         System.out.println("first element: "+ vector.firstElement());
         System.out.println("last element: "+ vector.lastElement());
-        System.out.println("vector contain 99: "+ vector.contains(99));
+        System.out.println("vector contain 99: "+ vector.contains(990));
     }
 
     private static void display(Vector<Integer> vector) {
