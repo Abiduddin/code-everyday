@@ -15,24 +15,29 @@ public class Iterator1 {
         list.add("P");
 
         // display all content
-        Iterator<String> itr  = list.iterator();
-        while (itr.hasNext()){
-            System.out.print(itr.next() +" ");
+        Iterator<String> itr = list.iterator();
+        while (itr.hasNext()) {
+            System.out.print(itr.next() + " ");
         }
         System.out.println();
 
         // modify objects being iterated
-        ListIterator<String > litr = list.listIterator();
-        while (litr.hasNext()){
+        ListIterator<String> litr = list.listIterator();
+        while (litr.hasNext()) {
             String element = litr.next();
             litr.set(element + "+");
         }
 
         // display all modified content
-        itr  = list.iterator();
-        while (itr.hasNext()){
+        itr = list.iterator();
+        while (itr.hasNext()) {
             System.out.print(itr.next() + " ");
         }
         System.out.println();
+
+        // display backwards
+        while (litr.hasPrevious()) {
+            System.out.print(litr.previous() + " ");
+        }
     }
 }

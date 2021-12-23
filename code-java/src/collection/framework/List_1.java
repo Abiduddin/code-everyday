@@ -18,9 +18,11 @@ public class List_1 {
         list.add(3);
         printList();
 
+        // element update
         list.set(2, 55);
         printList();
 
+        // element delete
         list.remove(2);
         printList();
 
@@ -31,6 +33,7 @@ public class List_1 {
         list.remove(new Integer(3));
         printList();
 
+        // sort
         Collections.sort(list);
         printList();
 
