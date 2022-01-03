@@ -31,5 +31,14 @@ public class RegExpr1 {
             System.out.println("Matches");
         else
             System.out.println("No Match");
+
+
+        System.out.println("Testing find Java against Java SE");
+        found = mat.find();
+
+        if (found)
+            System.out.println("subsequence found");
+        else
+            System.out.println("No Match");
     }
 }
