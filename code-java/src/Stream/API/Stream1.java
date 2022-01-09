@@ -36,6 +36,9 @@ public class Stream1 {
         System.out.println("odds number and greater than 23: ");
         odds.forEach(n -> System.out.print(n + " "));
 
+        System.out.println("Original list: "+ myList);
+
+
 
     }
 }
