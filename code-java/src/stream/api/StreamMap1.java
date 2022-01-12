@@ -1,6 +1,6 @@
-package Stream.API;
+package stream.api;
 
-import static Stream.API.StreamFilter1.getStudent;
+import static stream.api.StreamFilter1.getStudent;
 
 public class StreamMap1 {
     public static void main(String[] args) {

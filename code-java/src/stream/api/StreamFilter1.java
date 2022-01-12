@@ -1,4 +1,4 @@
-package Stream.API;
+package stream.api;
 
 import java.util.List;
 
