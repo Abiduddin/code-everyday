@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+</head>
+<body>
+<div id="app">
+    <p>{{ foo }}</p>
+    <br>
+    <button v-on:click="foo = 'baz'">Change it</button>
+</div>
+
+</body>
+<script>
+    var data1 = {foo: 'bar'};
+    Object.freeze(data1);
+    new Vue({
+       el: '#app',
+       data: data1
+    });
+</script>
+</html>
