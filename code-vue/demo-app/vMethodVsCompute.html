@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <button v-on:click="timeMethod">Click Me</button> <br>
+    Time Method:  {{ message }} <br>
+
+</div>
+
+<div id="app1">
+    <button v-on:click="timeComputed">Click Me</button> <br>
+    Time Computed:  {{ message }}
+</div>
+
+</body>
+<script>
+    var a1 = new Vue({
+        el: '#app',
+        data: {
+            message: "Now Time Unknown !!"
+        },
+        methods: {
+            timeMethod: function () {
+                this.message = Date.now()
+            }
+        }
+    });
+
+    var a2 =new Vue({
+        el: '#app1',
+        data: {
+            message: "Now Time Unknown !!"
+        },
+        computed: {
+            timeComputed: function () {
+                this.message = Date.now()
+            }
+        }
+    });
+
+
+</script>
+</html>
