@@ -11,7 +11,7 @@
         Enter place name for current weather:
         <input v-model="question">
     </p>
-    <p>{{ answer }}</p>
+    <p v-html="answer"></p>
 </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
@@ -21,7 +21,7 @@
         el: '#watch-example',
         data: {
             question: '',
-            answer: 'I cannot give you an answer until you ask a question!'
+            answer: 'Please enter valid place name!'
         },
         watch: {
             // whenever question changes, this function will run
@@ -49,11 +49,9 @@
                         q: this.question,
                         lat: '0',
                         lon: '0',
-                        callback: 'test',
                         id: '2172797',
                         lang: 'null',
-                        units: 'imperial',
-                        mode: 'xml'
+                        units: 'imperial'
                     },
                     headers: {
                         'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
@@ -66,7 +64,13 @@
                 this.answer = 'Thinking...'
                 var vm = this
                 axios.request(options).then(function (response) {
-                    vm.answer = response.data
+                    var responseData = response.data
+                    vm.answer = "<table>"
+                        + "<tr>" + "<th>" + "City" + "</th>" + "<td>" + responseData.name + "</td>" + "</tr>"
+                        + "<tr>" + "<th>" + "Country" + "</th>" + "<td>" + responseData.sys.country + "</td>" + "</tr>"
+                        + "<tr>" + "<th>" + "Weather" + "</th>" + "<td>" + responseData.weather[0].description + "</td>" + "</tr>"
+                        + "<tr>" + "<th>" + "Tempature" + "</th>" + "<td>" + responseData.main.temp + "</td>" + "</tr>"
+                        + "</table>"
                     console.log(vm.answer)
                 }).catch(function (error) {
                     vm.answer = 'Error! Could not reach the API. ' + error
