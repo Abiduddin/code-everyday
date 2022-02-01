@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+</head>
+<body>
+<div id="watch-example">
+    <p>
+        Enter place name for current weather:
+        <input v-model="question">
+    </p>
+    <p>{{ answer }}</p>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+<script>
+    var watchExampleVM = new Vue({
+        el: '#watch-example',
+        data: {
+            question: '',
+            answer: 'I cannot give you an answer until you ask a question!'
+        },
+        watch: {
+            // whenever question changes, this function will run
+            question: function (newQuestion, oldQuestion) {
+                this.answer = 'Waiting for you to stop typing...'
+                this.debouncedGetAnswer()
+            }
+        },
+        created: function () {
+            // _.debounce is a function provided by lodash to limit how
+            // often a particularly expensive operation can be run.
+            // In this case, we want to limit how often we access
+            // yesno.wtf/api, waiting until the user has completely
+            // finished typing before making the ajax request. To learn
+            // more about the _.debounce function (and its cousin
+            // _.throttle), visit: https://lodash.com/docs#debounce
+            this.debouncedGetAnswer = _.debounce(this.getAnswer, 500)
+        },
+        methods: {
+            getAnswer: function () {
+                var options = {
+                    method: 'GET',
+                    url: 'https://community-open-weather-map.p.rapidapi.com/weather',
+                    params: {
+                        q: this.question,
+                        lat: '0',
+                        lon: '0',
+                        callback: 'test',
+                        id: '2172797',
+                        lang: 'null',
+                        units: 'imperial',
+                        mode: 'xml'
+                    },
+                    headers: {
+                        'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
+                        'x-rapidapi-key': '6afd4001fbmsh18d3a2d05823e40p17f48ejsnb254a7509a92'
+                    }
+                }
+                console.log(this.question)
+                console.log(options)
+
+                this.answer = 'Thinking...'
+                var vm = this
+                axios.request(options).then(function (response) {
+                    vm.answer = response.data
+                    console.log(vm.answer)
+                }).catch(function (error) {
+                    vm.answer = 'Error! Could not reach the API. ' + error
+                    console.log(error)
+                })
+            }
+        }
+    })
+</script>
+</html>
