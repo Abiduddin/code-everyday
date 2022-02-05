@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+</head>
+<body>
+<div id="app">
+    <template v-if="loginType === 'username'">
+        <label>Username</label>
+        <input placeholder="Enter your username" key="username-input">
+    </template>
+    <template v-else>
+        <label>Email</label>
+        <input placeholder="Enter your email address" key="email-input">
+    </template>
+    <br>
+    <button v-on:click="changeInput">Change</button>
+    </div>
+</body>
+<script>
+new Vue({
+    el:'#app',
+    data:{
+        loginType:'username'
+    },
+    methods:{
+        changeInput: function () {
+            this.loginType = (this.loginType === 'username')? ' ': 'username';
+        }
+    }
+})
+</script>
+</html>
