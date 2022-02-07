@@ -8,9 +8,12 @@
 </head>
 <body>
 <div id="example-2">
-    <input v-on:keyup.enter="greet('enter)">
-    <button v-on:keyup.page-down="greet('page-down)">Page-down</button>
-    <button v-on:keyup.13="greet('keyup.13)">Key 13</button>
+
+    a: <input v-on:keyup.a="greet('a')"><br>
+    up: <input v-on:keyup.up="greet('up')"><br>
+    Enter: <input v-on:keyup.enter="greet('Enter')"><br>
+    Page down: <input v-on:keyup.page-down="greet('Page down')"><br>
+
 </div>
 </body>
 <script>
@@ -19,13 +22,9 @@
         data: {
             name: 'Vue.js'
         },
-        // define methods under the `methods` object
         methods: {
             greet: function (message) {
-                // `this` inside methods points to the Vue instance
-                alert('This is ' + message + '!')
-                // `event` is the native DOM event
-
+                alert('You type ' + message + '!')
             }
         }
     })
